@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Devil's coding see on your own risk</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+    header {
+      background-color: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      padding: 20px;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 30px auto;
+    }
+    .program-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+    }
+    .program-title {
+      font-size: 1.2rem;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+    .button-group {
+      margin-top: 10px;
+    }
+    .program-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-right: 10px;
+      margin-top: 5px;
+      background: linear-gradient(45deg, #38bdf8, #3b82f6);
+      color: #0f172a;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8 inset;
+      transition: transform 0.2s;
+    }
+    .program-button:hover {
+      transform: scale(1.05);
+    }
+    .details {
+      display: none;
+      margin-top: 15px;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+    }
+    .details-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      color: #38bdf8;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+      transition: transform 0.2s;
+      cursor: pointer;
+      user-select: none;
+    }
+    .details-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+<header>Devil's Coding</header>
+<div class="container">
+  <!-- DAA Programming -->
+  <div class="program-card">
+    <div class="program-title">DAA Programming: Programs</div>
+    <p>Jaldii kar broo Mam dekh rahii haii</p>
+    <div class="button-group">
+      <button class="program-button" onclick="toggleDetails('daaA')">Part A</button>
+      <button class="program-button" onclick="toggleDetails('daaB')">Part B</button>
+    </div>
+    <div id="daaA" class="details">
+      <div class="details-box" onclick="openProgram('DAA A1')">Selection Sort</div>
+      <div class="details-box" onclick="openProgram('DAA A2')">DFS</div>
+      <div class="details-box" onclick="openProgram('DAA A3')">Min/Max</div>
+      <div class="details-box" onclick="openProgram('DAA A5')">BFS</div>
+      <div class="details-box" onclick="openProgram('DAA A7')">Merge Sort</div>
+      <div class="details-box" onclick="openProgram('DAA A8')">Quick Sort</div>
+    </div>
+    <div id="daaB" class="details">
+      <div class="details-box" onclick="openProgram('DAA B1')">Program B1</div>
+      <div class="details-box" onclick="openProgram('DAA B2')">Program B2</div>
+      <div class="details-box" onclick="openProgram('DAA B3')">Program B3</div>
+      <div class="details-box" onclick="openProgram('DAA B4')">Program B4</div>
+      <div class="details-box" onclick="openProgram('DAA B5')">Program B5</div>
+      <div class="details-box" onclick="openProgram('DAA B6')">Program B6</div>
+      <div class="details-box" onclick="openProgram('DAA B7')">Program B7</div>
+      <div class="details-box" onclick="openProgram('DAA B8')">Program B8</div>
+    </div>
+  </div>
+
+  <!-- R Programming -->
+  <div class="program-card">
+    <div class="program-title">R Programming: Programs</div>
+    <p>Jaldii kar broo Mam dekh rahii haii</p>
+    <div class="button-group">
+      <button class="program-button" onclick="toggleDetails('rA')">Part A</button>
+      <button class="program-button" onclick="toggleDetails('rB')">Part B</button>
+    </div>
+    <div id="rA" class="details">
+      <div class="details-box" onclick="openProgram('R A1')">if else </div>
+      <div class="details-box" onclick="openProgram('R A2')">for loop</div>
+      <div class="details-box" onclick="openProgram('R A3')">factorial</div>
+      <div class="details-box" onclick="openProgram('R A4')">mean,mode</div>
+      <div class="details-box" onclick="openProgram('R A5')">read and write</div>
+      <div class="details-box" onclick="openProgram('R A6')">Data set</div>
+    </div>
+    <div id="rB" class="details">
+      <div class="details-box" onclick="openProgram('R B1')">Program B1</div>
+      <div class="details-box" onclick="openProgram('R B2')">Program B2</div>
+      <div class="details-box" onclick="openProgram('R B3')">Program B3</div>
+      <div class="details-box" onclick="openProgram('R B4')">Program B4</div>
+      <div class="details-box" onclick="openProgram('R B5')">Program B5</div>
+      <div class="details-box" onclick="openProgram('R B6')">Program B6</div>
+      <div class="details-box" onclick="openProgram('R B7')">Program B7</div>
+      <div class="details-box" onclick="openProgram('R B8')">Program B8</div>
+    </div>
+  </div>
+</div>
+<footer>Uper dekh saale niche ky dekh raha haii!!</footer>
+
+<script>
+  // Program Data
+  const programData = {
+    "DAA A1": `L=[60,30,78,23,10]
+n=len(L)
+for i in range(n-1):
+    min=i
+    for j in range(i+1,n):
+        if L[j]<L[min]:
+            min=j
+    L[i],L[min]=L[min],L[i]
+print(L)`,
+    "DAA A2": `def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+    print(start, end=' ')
+    for neighbor in graph.get(start, []):
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited)
+
+n = int(input("Enter number of edges: "))
+graph = {}
+print("Enter edges (e.g., A B):")
+for _ in range(n):
+    u, v = input().split()
+    graph.setdefault(u, []).append(v)
+    graph.setdefault(v, [])
+start_node = input("Enter start node for DFS: ")
+print("DFS Traversal:")
+dfs(graph, start_node)`,
+     "DAA A3": `def find_min_max(arr, low, high):
+    if low == high:
+        return arr[low], arr[low]
+    if high == low + 1:
+        return (min(arr[low], arr[high]), max(arr[low], arr[high]))
+    mid = (low + high) // 2
+    min1, max1 = find_min_max(arr, low, mid)
+    min2, max2 = find_min_max(arr, mid + 1, high)
+    return min(min1, min2), max(max1, max2)
+
+arr = list(map(int, input("Enter elements of the array separated by spaces: ").split()))
+minimum, maximum = find_min_max(arr, 0, len(arr) - 1)
+print("Minimum element:", minimum)
+print("Maximum element:", maximum)`,
+    "DAA A5": `from collections import deque
+graph = {}
+n = int(input("Number of nodes: "))
+for _ in range(n):
+    node = input(f"Node {_+1}: ")
+    graph[node] = []
+print("Enter edges (u v), type 'done' to stop:")
+while True:
+    edge = input()
+    if edge == "done":
+        break
+    u, v = edge.split()
+    graph[u].append(v)
+start = input("Start BFS from: ")
+visited = set()
+queue = deque([start])
+print("BFS:", end=' ')
+while queue:
+    node = queue.popleft()
+    if node not in visited:
+        print(node, end=' ')
+        visited.add(node)
+        queue.extend(graph[node])`,
+    "DAA A7": `def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left_half = merge_sort(arr[:mid])
+    right_half = merge_sort(arr[mid:])
+    return merge(left_half, right_half)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+n = int(input("Enter the number of elements: "))
+arr = []
+for _ in range(n):
+    num = int(input("Enter number: "))
+    arr.append(num)
+sorted_arr = merge_sort(arr)
+print("Sorted list:", sorted_arr)`,
+    "DAA A8": `def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left)+middle+quick_sort(right)
+
+user_input = input("Enter a numbers: ")
+try:
+    numbers = list(map(int, user_input.strip().split()))
+    sorted_list = quick_sort(numbers)
+    print("sort: ",sorted_list)
+except:
+    print("Invalid")
+`,
+    "DAA A9": `Program A9 code`,
+    "DAA A10": `Program A10 code`,
+    "DAA B1":`sameer`,
+    "R A1": `x = c(4, 5, 6)
+y = c(1, 2, 3, 4)
+
+if (length(x) == length(y)) {
+    print("both vector length same")
+} else {
+    print("both vector are not same")
+}`,
+    "R A2": `for (i in 1:10)  
+{
+    print(paste("i =", i))  
+    if (i == 5)  
+        stop("iteration stopped (on condition) at 5")  
+}`,
+    "R A3":`fact <- function(n) {
+    if (n <= 1)
+        return(1)
+    else
+        return(n * factorial(n - 1))
+}
+
+n <- as.numeric(readline("Enter n value: "))
+print(paste("Factorial of number is:", fact(n)))`,
+    "R A4":`a <- c(8, 10, 4, 6, 23, 5, 9, 8, 5, 4, 8, 7, 8)
+
+print(paste("mean of vector =", mean(a)))
+
+print(paste("median of vector =", median(a)))
+
+print(paste("mode of vector =", names(sort(-table(a)))[1]))`,
+    "R A5":`output_file_path <- "D:\out.txt"
+data <- "hello, my name is A"
+paste("Written successfully", writeLines(data, output_file_path))
+paste("Reading a file =", readLines("D:\out.txt"))`,
+    "R A6":`df = data.frame(
+  name = c("amiya", "roy", "aish"),
+  progamming_language = c("C", "Python", "Java"),
+  age = c(22, 21, 23)
+)
+
+cat("data in dataframe is:
+")
+print(df)
+
+mytbl = edit(df)
+cat("manipulating dataframe using text editor in after editing")
+print(mytbl)
+
+newdf = rbind(
+  df,
+  data.frame(
+    name = c("Pavan"),
+    progamming_language = c("ost"),
+    age = c(24)
+  )
+)
+
+cat("after adding new row(s):
+")
+print(newdf)`,
+    "R A7":``,
+    "R A8":``,
+    "R A9":``,
+    "R A10":``,
+    "R B1": `R program B1`,
+    "R B2": `R program B2`
+  };
+
+  function toggleDetails(id) {
+    document.querySelectorAll('.details').forEach(el => {
+      if (el.id !== id) el.style.display = 'none';
+    });
+    const box = document.getElementById(id);
+    if (box.style.display === 'grid') {
+      box.style.display = 'none';
+    } else {
+      box.style.display = 'grid';
+    }
+  }
+
+  // Opens a new page with code and Copy button
+  function openProgram(name) {
+    const code = programData[name] || "Code not found!";
+    const win = window.open("", "_blank");
+    win.document.write(`
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>${name}</title>
+        <style>
+          body {
+            background: #0f172a;
+            color: #38bdf8;
+            font-family: monospace, monospace;
+            padding: 30px;
+            white-space: pre-wrap;
+          }
+          h1 {
+            color: #38bdf8;
+            margin-bottom: 20px;
+          }
+          pre {
+            background: rgba(56, 189, 248, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 16px;
+            line-height: 1.4;
+          }
+          button {
+            background: linear-gradient(45deg, #38bdf8, #3b82f6);
+            color: #0f172a;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8 inset;
+          }
+          button:hover {
+            transform: scale(1.05);
+          }
+        </style>
+      </head>
+      <body>
+        <h1>${name}</h1>
+        <button onclick="copyCode()">📋 Copy Code</button>
+        <pre id="codeBox">${code.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>
+        <script>
+          function copyCode() {
+            const text = document.getElementById('codeBox').innerText;
+            navigator.clipboard.writeText(text).then(()=>{
+              alert('Code copied!');
+            });
+          }
+        <\/script>
+      </body>
+      </html>
+    `);
+  }
+</script>
+</body>
+</html>

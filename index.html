@@ -351,72 +351,77 @@ print(newdf)`,
   }
 
   // Opens a new page with code and Copy button
-  function openProgram(name) {
-    const code = programData[name] || "Code not found!";
-    const win = window.open("", "_blank");
-    win.document.write(`
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>${name}</title>
-        <style>
-          body {
-            background: #0f172a;
-            color: #38bdf8;
-            font-family: monospace, monospace;
-            padding: 30px;
-            white-space: pre-wrap;
-          }
-          h1 {
-            color: #38bdf8;
-            margin-bottom: 20px;
-          }
-          pre {
-            background: rgba(56, 189, 248, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-size: 16px;
-            line-height: 1.4;
-          }
-          button {
-            background: linear-gradient(45deg, #38bdf8, #3b82f6);
-            color: #0f172a;
-            font-weight: 600;
-            border: none;
-            border-radius: 6px;
-            padding: 8px 16px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8 inset;
-          }
-          button:hover {
-            transform: scale(1.05);
-          }
-        </style>
-      </head>
-      <body>
-        <h1>${name}</h1>
-        <button class="btn" onclick="history.back()">⬅ Back</button>
-        <button onclick="copyCode()"> Copy Code</button> 
-        <pre id="codeBox">${code.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>
-        <script>
-          function copyCode() {
-            const text = document.getElementById('codeBox').innerText;
-            navigator.clipboard.writeText(text).then(()=>{
-              alert('Code copied!');
-            });
-          }
-        <\/script>
-      </body>
-      </html>
-    `);
-  }
+ // Opens a new page with code and Copy button
+function openProgram(name) {
+  const code = programData[name] || "Code not found!";
+  const win = window.open("", "_blank");
+  win.document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>${name}</title>
+      <style>
+        body {
+          background: #0f172a;
+          color: #38bdf8;
+          font-family: monospace, monospace;
+          padding: 30px;
+          white-space: pre-wrap;
+        }
+        h1 {
+          color: #38bdf8;
+          margin-bottom: 20px;
+        }
+        pre {
+          background: rgba(56, 189, 248, 0.1);
+          padding: 15px;
+          border-radius: 8px;
+          overflow-x: auto;
+          font-size: 16px;
+          line-height: 1.4;
+        }
+        button {
+          background: linear-gradient(45deg, #38bdf8, #3b82f6);
+          color: #0f172a;
+          font-weight: 600;
+          border: none;
+          border-radius: 6px;
+          padding: 8px 16px;
+          cursor: pointer;
+          margin-bottom: 20px;
+          margin-right: 10px;
+          box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8 inset;
+          transition: transform 0.2s;
+        }
+        button:hover {
+          transform: scale(1.05);
+        }
+      </style>
+    </head>
+    <body>
+      <h1>${name}</h1>
+      <button onclick="window.close()">⬅ Back</button>
+      <button onclick="copyCode()"> Copy Code</button> 
+      <pre id="codeBox">${code.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>
+      <script>
+        function copyCode() {
+          const text = document.getElementById('codeBox').innerText;
+          navigator.clipboard.writeText(text).then(()=>{
+            alert('Code copied!');
+          });
+        }
+      <\/script>
+    </body>
+    </html>
+  `);
+}
+
 </script>
 </body>
 </html>
+
 
 
 

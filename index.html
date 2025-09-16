@@ -399,7 +399,7 @@ print(newdf)`,
       </head>
       <body>
         <h1>${name}</h1>
-        <button onclick="window.close()"> Back</button>
+        <button class="btn" onclick="history.back()">⬅ Back</button>
         <button onclick="copyCode()"> Copy Code</button> 
         <pre id="codeBox">${code.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>
         <script>
@@ -417,6 +417,7 @@ print(newdf)`,
 </script>
 </body>
 </html>
+
 
 
 
